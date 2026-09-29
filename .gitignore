@@ -1,0 +1,29 @@
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+*.egg-info/
+
+# Claude Code scratch (see chat: temp home for files blocked by a stale
+# migrations/versions/ permission cache — move contents out, then delete)
+.claude-scratch/
+
+# Node / frontend
+node_modules/
+.next/
+dist/
+
+# Local settings override
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db

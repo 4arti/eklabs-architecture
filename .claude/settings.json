@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pytest*)",
+      "Bash(ruff*)",
+      "Bash(alembic*)",
+      "Bash(pnpm*)"
+    ],
+    "deny": [
+      "Edit(migrations/versions/**)",
+      "Edit(**/migrations/versions/**)",
+      "Edit(.env)",
+      "Write(.env)",
+      "Edit(.env.*)",
+      "Write(.env.*)",
+      "Bash(*--env production*)",
+      "Bash(*--env=production*)",
+      "Bash(*prod-deploy*)"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+# Tagging index for docs/reference/regulatory_sources/.
+#
+# Each physical file lives in exactly ONE place in the folder tree (filed by
+# jurisdiction/ICH body, since that's how CTD citations are normally phrased —
+# "ICH M4Q", "21 CFR 314"). A single file is often also relevant to a
+# product type, an application type, and/or a specific module — rather than
+# copying or symlinking it into every matching folder, tag it here once.
+#
+# `id` is the stable citation key: templates and profiles in
+# products/ectd/templates/ and products/ectd/profiles/ cite this id, not the
+# raw path, so the file can be moved/renamed without breaking every citation
+# that points at it.
+#
+# Add one entry per file as sources are added to the tree below. Leave this
+# list empty until real files are placed — do not add placeholder/example
+# entries that don't correspond to an actual file in the tree.
+
+entries: []
+
+# Schema for each entry:
+#
+# - id: <stable-kebab-case-key>          # what templates/profiles cite
+#   path: <path relative to this file>   # e.g. jurisdictions/us/module1/foo.pdf
+#   title: <official document title>
+#   source_url: <where it was downloaded from>
+#   version_date: <YYYY-MM or YYYY-MM-DD, per the document's own revision date>
+#   jurisdiction: <us | eu | canada | japan | uk | australia | india | global>
+#   product_types: [small_molecule, biologic, biosimilar, vaccine, generic]  # optional, omit if not product-specific
+#   application_types: [nda, anda, bla, ind, maa]                            # optional, omit if not application-specific
+#   modules: [m1, m2, m3, m4, m5]                                            # CTD modules this document is cited from
+#   document_type: <guidance | validation_criteria | dtd | example>          # what kind of document this is
+#   ectd_version: <v3.2.2 | v4.0>                                            # optional, only for eCTD-backbone-scoped documents
