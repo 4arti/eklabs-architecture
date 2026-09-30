@@ -1,0 +1,46 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.3, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\Aarti\Desktop\eklabs-architecture\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Aarti\Desktop\eklabs-architecture
+configfile: pyproject.toml
+testpaths: src/eklabs_platform, src/products
+plugins: anyio-4.15.1, asyncio-1.4.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=session, asyncio_default_test_loop_scope=session
+collecting ... collected 28 items
+
+src/eklabs_platform/core/tests/test_tenant_isolation.py::test_cross_tenant_read_is_blocked[app_user] PASSED [  3%]
+src/eklabs_platform/core/tests/test_tenant_isolation.py::test_cross_tenant_read_is_blocked[audit_log] PASSED [  7%]
+src/eklabs_platform/core/tests/test_tenant_isolation.py::test_cross_tenant_read_is_blocked[chunk] PASSED [ 10%]
+src/eklabs_platform/core/tests/test_tenant_isolation.py::test_cross_tenant_read_is_blocked[document] PASSED [ 14%]
+src/eklabs_platform/core/tests/test_tenant_isolation.py::test_cross_tenant_read_is_blocked[page] PASSED [ 17%]
+src/eklabs_platform/core/tests/test_tenant_isolation.py::test_audit_log_is_append_only PASSED [ 21%]
+src/eklabs_platform/core/tests/test_tenant_isolation.py::test_cross_tenant_insert_blocked_by_composite_fk PASSED [ 25%]
+src/products/ectd/tests/test_applications.py::test_cross_tenant_read_is_blocked[application] PASSED [ 28%]
+src/products/ectd/tests/test_applications.py::test_cross_tenant_read_is_blocked[product] PASSED [ 32%]
+src/products/ectd/tests/test_applications.py::test_cross_tenant_read_is_blocked[section] PASSED [ 35%]
+src/products/ectd/tests/test_applications.py::test_cross_tenant_insert_blocked_by_composite_fk_application_to_product PASSED [ 39%]
+src/products/ectd/tests/test_applications.py::test_cross_tenant_insert_blocked_by_composite_fk_section_to_application PASSED [ 42%]
+src/products/ectd/tests/test_applications.py::test_create_application_valid_combination_succeeds PASSED [ 46%]
+src/products/ectd/tests/test_applications.py::test_create_application_rejects_disallowed_format_for_situation PASSED [ 50%]
+src/products/ectd/tests/test_applications.py::test_create_application_rejects_unknown_app_type PASSED [ 53%]
+src/products/ectd/tests/test_applications.py::test_bogus_format_bypassing_service_layer_hits_db_check PASSED [ 57%]
+src/products/ectd/tests/test_format_policy.py::test_ectd_4_0_allowed_for_new_application PASSED [ 60%]
+src/products/ectd/tests/test_format_policy.py::test_ectd_3_2_2_allowed_for_both_situations PASSED [ 64%]
+src/products/ectd/tests/test_format_policy.py::test_ctd_pdf_never_allowed_with_literal_yaml_reason PASSED [ 67%]
+src/products/ectd/tests/test_format_policy.py::test_unknown_app_type_rejects_every_format_naming_the_bad_type PASSED [ 71%]
+src/products/ectd/tests/test_format_policy.py::test_all_us_application_types_are_valid[nda_505b1] PASSED [ 75%]
+src/products/ectd/tests/test_format_policy.py::test_all_us_application_types_are_valid[nda_505b2] PASSED [ 78%]
+src/products/ectd/tests/test_format_policy.py::test_all_us_application_types_are_valid[anda] PASSED [ 82%]
+src/products/ectd/tests/test_format_policy.py::test_all_us_application_types_are_valid[bla_351a] PASSED [ 85%]
+src/products/ectd/tests/test_format_policy.py::test_all_us_application_types_are_valid[bla_351k] PASSED [ 89%]
+src/products/ectd/tests/test_format_policy.py::test_ectd_4_0_not_allowed_for_existing_3_2_2_application_with_generated_reason PASSED [ 92%]
+src/products/ectd/tests/test_format_policy.py::test_unknown_authority_raises_profile_not_found PASSED [ 96%]
+src/products/ectd/tests/test_format_policy.py::test_profile_cache_identity_and_reset PASSED [100%]
+
+============================== warnings summary ===============================
+src/eklabs_platform/core/tests/test_tenant_isolation.py::test_cross_tenant_read_is_blocked[app_user]
+  C:\Users\Aarti\Desktop\eklabs-architecture\.venv\Lib\site-packages\alembic\config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.
+    util.warn_deprecated(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 28 passed, 1 warning in 130.23s (0:02:10) ==================

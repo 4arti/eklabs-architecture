@@ -5,22 +5,29 @@ from memory — and regulatory rules are exactly what can't be guessed. Every
 rule cited in `products/ectd/profiles/` or `products/ectd/templates/` must
 point at a file (via its `id` in `manifest.yaml`) in `regulatory_sources/`.
 
-Not yet populated. Files are filed once, by their primary axis
-(jurisdiction/ICH body — matching how CTD citations are normally phrased, e.g.
-"ICH M4Q", "21 CFR 314"), under `regulatory_sources/`:
+Files are filed once, by their primary axis (jurisdiction/ICH body —
+matching how CTD citations are normally phrased, e.g. "ICH M4Q", "21 CFR
+314"), under `regulatory_sources/`:
 
 ```
 regulatory_sources/
 ├── global/ich/{m4,m8,q-series,s-series,e-series}/
 ├── global/ectd/{v3.2.2,v4.0}/
-├── jurisdictions/{us,eu,canada,japan,uk,australia,india}/
-│   ├── structure/
-│   ├── module1/{v3.2.2,v4.0}/
-│   ├── labeling/
-│   ├── submission/{v3.2.2,v4.0}/
-│   └── guidelines/
-└── examples/epars/
+└── jurisdictions/{us,eu,canada,japan,uk,australia,india}/
+    ├── structure/
+    ├── module1/{v3.2.2,v4.0}/
+    ├── labeling/
+    ├── submission/{v3.2.2,v4.0}/
+    └── guidelines/
 ```
+
+Public test fixtures (EPARs, DailyMed labels, FDA 483s — anything used as
+labeled eval data rather than cited guidance) live under `evals/` instead,
+per spec.md §14 ("Tests live in `evals/` and run in CI"), not here.
+
+None of the actual documents are committed to git — `manifest.yaml` lists
+each one's `source_url`; `scripts/fetch_sources.py` downloads them into this
+tree on demand (gitignored).
 
 `module1/` and `submission/` split by eCTD version because the regulator
 publishes genuinely separate documents per version there (e.g. FDA's Module 1

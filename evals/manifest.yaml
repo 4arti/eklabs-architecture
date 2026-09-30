@@ -1,0 +1,606 @@
+entries:
+- id: epar-tafamidis-accord
+  path: fixtures/ocr/epar-tafamidis-accord.pdf
+  title: Tafamidis Accord — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/tafamidis-accord-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-gilenya
+  path: fixtures/ocr/epar-gilenya.pdf
+  title: Gilenya — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/gilenya-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-xbryk
+  path: fixtures/ocr/epar-xbryk.pdf
+  title: Xbryk — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/xbryk-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-tyruko
+  path: fixtures/ocr/epar-tyruko.pdf
+  title: Tyruko — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/tyruko-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-celldemic
+  path: fixtures/ocr/epar-celldemic.pdf
+  title: Celldemic — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/celldemic-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-incellipan
+  path: fixtures/ocr/epar-incellipan.pdf
+  title: Incellipan — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/incellipan-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-gobivaz
+  path: fixtures/ocr/epar-gobivaz.pdf
+  title: Gobivaz — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/gobivaz-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-tolvaptan-accord
+  path: fixtures/ocr/epar-tolvaptan-accord.pdf
+  title: Tolvaptan Accord — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/tolvaptan-accord-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-yuflyma
+  path: fixtures/ocr/epar-yuflyma.pdf
+  title: Yuflyma — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/yuflyma-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-rinvoq
+  path: fixtures/ocr/epar-rinvoq.pdf
+  title: Rinvoq — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/rinvoq-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-joenja
+  path: fixtures/ocr/epar-joenja.pdf
+  title: Joenja — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/joenja-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-skytrofa-previously-lonapegsomatropin-ascendis-pharma
+  path: fixtures/ocr/epar-skytrofa-previously-lonapegsomatropin-ascendis-pharma.pdf
+  title: Skytrofa (previously Lonapegsomatropin Ascendis Pharma) — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/lonapegsomatropin-ascendis-pharma-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-ruxolitinib-viatris
+  path: fixtures/ocr/epar-ruxolitinib-viatris.pdf
+  title: Ruxolitinib Viatris — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/ruxolitinib-viatris-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-nezglyal
+  path: fixtures/ocr/epar-nezglyal.pdf
+  title: Nezglyal — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/nezglyal-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-jorveza
+  path: fixtures/ocr/epar-jorveza.pdf
+  title: Jorveza — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/jorveza-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-padcev
+  path: fixtures/ocr/epar-padcev.pdf
+  title: Padcev — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/padcev-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-relistor
+  path: fixtures/ocr/epar-relistor.pdf
+  title: Relistor — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/relistor-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-degevma
+  path: fixtures/ocr/epar-degevma.pdf
+  title: Degevma — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/degevma-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-atazanavir-viatris-previously-atazanavir-mylan
+  path: fixtures/ocr/epar-atazanavir-viatris-previously-atazanavir-mylan.pdf
+  title: Atazanavir Viatris (previously Atazanavir Mylan) — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/atazanavir-mylan-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-uzpruvo
+  path: fixtures/ocr/epar-uzpruvo.pdf
+  title: Uzpruvo — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/uzpruvo-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-givlaari
+  path: fixtures/ocr/epar-givlaari.pdf
+  title: Givlaari — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/givlaari-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-susvimo
+  path: fixtures/ocr/epar-susvimo.pdf
+  title: Susvimo — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/susvimo-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-pregabalin-viatris-pharma-previously-pregabalin-pfizer
+  path: fixtures/ocr/epar-pregabalin-viatris-pharma-previously-pregabalin-pfizer.pdf
+  title: Pregabalin Viatris Pharma (previously Pregabalin Pfizer) — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/pregabalin-pfizer-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-tevimbra
+  path: fixtures/ocr/epar-tevimbra.pdf
+  title: Tevimbra — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/tevimbra-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-cometriq
+  path: fixtures/ocr/epar-cometriq.pdf
+  title: Cometriq — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/cometriq-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-otulfi
+  path: fixtures/ocr/epar-otulfi.pdf
+  title: Otulfi — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/otulfi-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-fintepla
+  path: fixtures/ocr/epar-fintepla.pdf
+  title: Fintepla — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/fintepla-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-onerji
+  path: fixtures/ocr/epar-onerji.pdf
+  title: Onerji — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/onerji-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-mcombriax
+  path: fixtures/ocr/epar-mcombriax.pdf
+  title: mCombriax — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/mcombriax-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-prevenar-13
+  path: fixtures/ocr/epar-prevenar-13.pdf
+  title: Prevenar 13 — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/prevenar-13-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-blincyto
+  path: fixtures/ocr/epar-blincyto.pdf
+  title: Blincyto — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/blincyto-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-xbonzy
+  path: fixtures/ocr/epar-xbonzy.pdf
+  title: Xbonzy — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/xbonzy-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-leflunomide-zentiva-previously-leflunomide-winthrop
+  path: fixtures/ocr/epar-leflunomide-zentiva-previously-leflunomide-winthrop.pdf
+  title: Leflunomide Zentiva (previously Leflunomide Winthrop) — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/leflunomide-winthrop-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-xarelto
+  path: fixtures/ocr/epar-xarelto.pdf
+  title: Xarelto — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/xarelto-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-icotyde
+  path: fixtures/ocr/epar-icotyde.pdf
+  title: Icotyde — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/icotyde-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-zokovea
+  path: fixtures/ocr/epar-zokovea.pdf
+  title: Zokovea — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/zokovea-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-yeytuo
+  path: fixtures/ocr/epar-yeytuo.pdf
+  title: Yeytuo — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/yeytuo-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-mysildecard
+  path: fixtures/ocr/epar-mysildecard.pdf
+  title: Mysildecard — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/mysildecard-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-onpattro
+  path: fixtures/ocr/epar-onpattro.pdf
+  title: Onpattro — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/onpattro-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-fruzaqla
+  path: fixtures/ocr/epar-fruzaqla.pdf
+  title: Fruzaqla — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/fruzaqla-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-mounjaro
+  path: fixtures/ocr/epar-mounjaro.pdf
+  title: Mounjaro — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/mounjaro-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-litfulo
+  path: fixtures/ocr/epar-litfulo.pdf
+  title: Litfulo — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/litfulo-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-wegovy
+  path: fixtures/ocr/epar-wegovy.pdf
+  title: Wegovy — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/wegovy-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-entecavir-viatris-previously-entecavir-mylan
+  path: fixtures/ocr/epar-entecavir-viatris-previously-entecavir-mylan.pdf
+  title: Entecavir Viatris (previously Entecavir Mylan) — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/entecavir-mylan-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-elahere
+  path: fixtures/ocr/epar-elahere.pdf
+  title: Elahere — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/elahere-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-osenvelt
+  path: fixtures/ocr/epar-osenvelt.pdf
+  title: Osenvelt — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/osenvelt-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-nucala
+  path: fixtures/ocr/epar-nucala.pdf
+  title: Nucala — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/nucala-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-steqeyma
+  path: fixtures/ocr/epar-steqeyma.pdf
+  title: Steqeyma — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/steqeyma-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-avtozma
+  path: fixtures/ocr/epar-avtozma.pdf
+  title: Avtozma — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/avtozma-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-grasustek
+  path: fixtures/ocr/epar-grasustek.pdf
+  title: Grasustek — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/grasustek-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-vevzuo
+  path: fixtures/ocr/epar-vevzuo.pdf
+  title: Vevzuo — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/vevzuo-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-denbrayce
+  path: fixtures/ocr/epar-denbrayce.pdf
+  title: Denbrayce — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/denbrayce-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-paxneury
+  path: fixtures/ocr/epar-paxneury.pdf
+  title: Paxneury — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/paxneury-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-qinlock
+  path: fixtures/ocr/epar-qinlock.pdf
+  title: Qinlock — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/qinlock-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'
+- id: epar-olumiant
+  path: fixtures/ocr/epar-olumiant.pdf
+  title: Olumiant — EPAR public assessment report
+  source_url: https://www.ema.europa.eu/en/documents/assessment-report/olumiant-epar-public-assessment-report_en.pdf
+  capability:
+  - ocr
+  - citation_checks
+  snapshot_date: '2026-09-30'
+  license_note: 'EMA Legal Notice (ema.europa.eu/en/about-us/about-website/legal-notice): public documents
+    may be reproduced/distributed for non-commercial and commercial purposes provided EMA is acknowledged
+    as the source.'

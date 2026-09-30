@@ -4,7 +4,7 @@ import uuid
 from datetime import UTC, datetime
 from typing import Any
 
-from sqlalchemy import select
+from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from eklabs_platform.core.db.models.audit_log import AuditLog
@@ -30,19 +30,29 @@ async def record_event(
 ) -> AuditLog:
     """The only sanctioned way to write an audit_log row.
 
-    Locks the latest row for this tenant (SELECT ... FOR UPDATE) before
-    computing the next hash, so two concurrent writers in the same tenant
-    can't both read the same "latest" row and fork the chain. The hash
-    covers the event's content, not its DB-assigned id/seq (unknown before
-    insert) — the chain itself, not an embedded sequence number, is what
-    makes reordering or deletion detectable.
+    Serializes concurrent writers for this tenant via a transaction-scoped
+    Postgres advisory lock (released automatically at commit/rollback,
+    same lifetime a row lock would have had), not a SELECT ... FOR UPDATE
+    row lock — eklabs_app deliberately has no UPDATE grant on audit_log
+    (that's the actual mechanism behind the append-only guarantee, see
+    test_audit_log_is_append_only), and Postgres requires UPDATE privilege
+    for FOR UPDATE row locks even though no UPDATE statement ever runs
+    here. Advisory locks aren't gated by table ACLs at all, so this
+    achieves the same "don't let two writers fork the hash chain"
+    serialization without granting anything that would also legitimize a
+    real UPDATE. hashtext() collisions just mean two unrelated tenants'
+    writes occasionally serialize against each other unnecessarily — a
+    performance hiccup, never a correctness issue.
     """
+    await session.execute(
+        text("SELECT pg_advisory_xact_lock(hashtext(:tenant_id))"),
+        {"tenant_id": str(tenant_id)},
+    )
     latest = await session.scalar(
         select(AuditLog)
         .where(AuditLog.tenant_id == tenant_id)
         .order_by(AuditLog.seq.desc())
         .limit(1)
-        .with_for_update()
     )
     prev_hash = latest.hash if latest is not None else _GENESIS_HASH
     at = datetime.now(UTC)

@@ -1,10 +1,7 @@
 import uuid
 from collections.abc import Awaitable, Callable
-from pathlib import Path
 
 import pytest
-from alembic import command
-from alembic.config import Config
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from eklabs_platform.core.db.audit import record_event
@@ -15,31 +12,38 @@ from eklabs_platform.core.db.models.page import Page
 from eklabs_platform.core.db.models.tenant import Tenant
 from eklabs_platform.core.db.session import tenant_scoped_session
 
-# src/platform/core/tests/conftest.py -> tests -> core -> platform -> src -> repo root
-_REPO_ROOT = Path(__file__).resolve().parents[4]
-
-
-@pytest.fixture(scope="session", autouse=True)
-def _migrated_db() -> None:
-    """Runs `alembic upgrade head` once per test session, against
-    ALEMBIC_DATABASE_URL (eklabs_migrator), so `pytest` alone reproduces the
-    environment — no separate manual migration step for a contributor."""
-    config = Config(str(_REPO_ROOT / "alembic.ini"))
-    command.upgrade(config, "head")
+# _migrated_db (the alembic-upgrade-head autouse fixture) lives in the
+# root-level conftest.py instead of here — it needs to cascade to
+# src/products/ectd/tests/ too, which isn't a descendant of this directory,
+# so pytest's directory-tree-based conftest inheritance can't reach it from
+# here. Root conftest.py is still an ancestor of this directory, so nothing
+# below loses access to it.
 
 
 @pytest.fixture
 async def make_tenant() -> Callable[[], Awaitable[uuid.UUID]]:
-    """Inserts a bare tenant row. tenant's INSERT policy is unconditional
-    (WITH CHECK (true) — provisioning necessarily precedes any tenant
-    context), so which tenant_id tenant_scoped_session is opened with here
-    is irrelevant; a fresh random one is used only because the helper needs
-    one."""
+    """Inserts a bare tenant row.
+
+    The id is generated client-side (not left to the server default) and
+    the session is scoped to that same id *before* inserting — required,
+    not just tidy. SQLAlchemy auto-appends `RETURNING id, created_at` to
+    fetch server-generated values, and under RLS a RETURNING clause is
+    implicitly subject to the table's SELECT policy too (`id =
+    current_setting('app.tenant_id')`). tenant's INSERT policy is
+    unconditional (WITH CHECK (true)), but if the session were scoped to an
+    unrelated tenant_id, the newly-inserted row wouldn't satisfy the SELECT
+    policy and Postgres raises "new row violates row-level security policy"
+    on the RETURNING, not the INSERT itself — this bit us for real the
+    first time this fixture actually ran against a live database. The same
+    constraint applies to any future production tenant-signup code that
+    goes through tenant_scoped_session, not just this fixture.
+    """
 
     async def _make() -> uuid.UUID:
         suffix = uuid.uuid4().hex
-        async with tenant_scoped_session(uuid.uuid4()) as session:
-            tenant = Tenant(name=f"Test Tenant {suffix}", slug=f"test-tenant-{suffix}")
+        new_id = uuid.uuid4()
+        async with tenant_scoped_session(new_id) as session:
+            tenant = Tenant(id=new_id, name=f"Test Tenant {suffix}", slug=f"test-tenant-{suffix}")
             session.add(tenant)
             await session.flush()
             return tenant.id

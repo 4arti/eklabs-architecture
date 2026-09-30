@@ -27,3 +27,16 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
+
+# Downloaded regulatory sources / eval fixtures — manifest.yaml lists each
+# one's source_url; scripts/fetch_sources.py downloads the real files here
+# on demand. Keep the folder skeleton and manifests tracked, not the files.
+docs/reference/regulatory_sources/**/*
+!docs/reference/regulatory_sources/**/
+!docs/reference/regulatory_sources/**/.gitkeep
+!docs/reference/regulatory_sources/manifest.yaml
+
+evals/fixtures/**/*
+!evals/fixtures/**/
+!evals/fixtures/**/.gitkeep
+!evals/manifest.yaml

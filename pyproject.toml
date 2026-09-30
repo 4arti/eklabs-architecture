@@ -4,12 +4,15 @@ version = "0.1.0"
 description = "AI CTD authoring & cross-validation platform"
 requires-python = ">=3.12"
 dependencies = [
-    "sqlalchemy>=2.0.35",
+    "sqlalchemy[asyncio]>=2.0.35",
     "alembic>=1.13.2",
     "asyncpg>=0.29.0",
-    "psycopg[binary]>=3.2.1",
+    "psycopg2-binary>=2.9.9",
     "pgvector>=0.3.2",
     "pydantic>=2.8.2",
+    # Runtime dependency, not just a scripts/ tool: products/ectd/profiles
+    # loads authority profile YAML at request time (format_policy.py).
+    "pyyaml>=6.0.2",
 ]
 
 [project.optional-dependencies]
@@ -18,11 +21,28 @@ dev = [
     "pytest-asyncio>=0.24.0",
     "ruff>=0.6.3",
     "mypy>=1.11.1",
+    "types-PyYAML>=6.0.12",
+]
+sourcing = [
+    "httpx>=0.27.0",
+    "pandas>=2.2.0",
+    "openpyxl>=3.1.0",
+    "beautifulsoup4>=4.12.0",
 ]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
-testpaths = ["src/eklabs_platform"]
+# session-scoped, not the pytest-asyncio default of function-scoped: the
+# AsyncEngine in eklabs_platform.core.db.session is a module-level singleton
+# (matching production, where it lives for the app process's whole life, one
+# event loop). asyncpg connections are bound to the event loop that opened
+# them — a function-scoped loop closes at the end of every test, so the next
+# test's pool_pre_ping tries to reuse a connection tied to an already-closed
+# loop and fails with "RuntimeError: Event loop is closed". Session-scoping
+# the test loop matches the engine's actual (session-long) lifetime.
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
+testpaths = ["src/eklabs_platform", "src/products"]
 
 [tool.ruff]
 target-version = "py312"
@@ -31,12 +51,6 @@ line-length = 100
 [tool.mypy]
 python_version = "3.12"
 strict = true
-
-[[tool.mypy.overrides]]
-# asyncpg ships no type stubs / py.typed marker; only used for its exception
-# classes in tests (isinstance checks against a raised DBAPIError.orig).
-module = "asyncpg.*"
-ignore_missing_imports = true
 
 [build-system]
 requires = ["setuptools>=69"]

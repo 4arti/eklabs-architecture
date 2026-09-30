@@ -4,10 +4,16 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
-# Registers every model on Base.metadata so autogenerate can see all 6 tables
-# regardless of which module is imported first.
-from eklabs_platform.core.db import models  # noqa: F401
+# Registers every model on Base.metadata so autogenerate sees the whole
+# schema — platform tables AND product tables — regardless of which module
+# is imported first. This file lives here, outside both src/eklabs_platform
+# and src/products, specifically so it's free to import from both: it's the
+# one place in the repo where importing from `products` is required, not
+# forbidden — the "platform/ never imports products/" rule is about
+# platform/ *code*, and a root-level migration runner isn't that.
+from eklabs_platform.core.db import models as _platform_models  # noqa: F401
 from eklabs_platform.core.db.base import Base
+from products.ectd.db import models as _ectd_models  # noqa: F401
 
 config = context.config
 

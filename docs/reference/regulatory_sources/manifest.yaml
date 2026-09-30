@@ -11,12 +11,13 @@
 # raw path, so the file can be moved/renamed without breaking every citation
 # that points at it.
 #
-# Add one entry per file as sources are added to the tree below. Leave this
-# list empty until real files are placed — do not add placeholder/example
-# entries that don't correspond to an actual file in the tree.
-
-entries: []
-
+# Populated by the research pass recorded in the approved plan
+# (C:\Users\Aarti\.claude\plans\cryptic-wibbling-seahorse.md) — every
+# source_url below was verified (fetched/read) during that research, not
+# guessed. Entries with a `notes` field flagging something unresolved should
+# get that resolved before the document is treated as fully authoritative.
+# Actual files are downloaded by scripts/fetch_sources.py, not committed.
+#
 # Schema for each entry:
 #
 # - id: <stable-kebab-case-key>          # what templates/profiles cite
@@ -25,8 +26,1119 @@ entries: []
 #   source_url: <where it was downloaded from>
 #   version_date: <YYYY-MM or YYYY-MM-DD, per the document's own revision date>
 #   jurisdiction: <us | eu | canada | japan | uk | australia | india | global>
-#   product_types: [small_molecule, biologic, biosimilar, vaccine, generic]  # optional, omit if not product-specific
-#   application_types: [nda, anda, bla, ind, maa]                            # optional, omit if not application-specific
 #   modules: [m1, m2, m3, m4, m5]                                            # CTD modules this document is cited from
-#   document_type: <guidance | validation_criteria | dtd | example>          # what kind of document this is
+#   document_type: <guidance | validation_criteria | dtd>                    # what kind of document this is
 #   ectd_version: <v3.2.2 | v4.0>                                            # optional, only for eCTD-backbone-scoped documents
+#   notes: <optional -- flags anything unresolved/unverified about this entry>
+
+entries:
+- id: ich-m4
+  path: global/ich/m4/m4_r4.pdf
+  title: Organisation of the CTD for Human Use
+  source_url: https://database.ich.org/sites/default/files/M4_R4__Guideline.pdf
+  version_date: '2016-06-15'
+  jurisdiction: global
+  modules:
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: guidance
+- id: ich-m4q
+  path: global/ich/m4/m4q_r1.pdf
+  title: The CTD — Quality
+  source_url: https://database.ich.org/sites/default/files/M4Q_R1_Guideline.pdf
+  version_date: '2002-09-12'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-m4s
+  path: global/ich/m4/m4s_r2.pdf
+  title: The CTD — Safety
+  source_url: https://database.ich.org/sites/default/files/M4S_R2_Guideline.pdf
+  version_date: '2002-12-20'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-m4e
+  path: global/ich/m4/m4e_r2.pdf
+  title: The CTD — Efficacy
+  source_url: https://database.ich.org/sites/default/files/M4E_R2__Guideline.pdf
+  version_date: '2016-06-15'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-ectd-3.2.2-spec
+  path: global/ectd/v3.2.2/ectd_spec_v3_2_2.pdf
+  title: ICH eCTD Specification v3.2.2
+  source_url: http://estri.ich.org/eCTD/eCTD_Specification_v3_2_2.pdf
+  version_date: '2008-07-16'
+  jurisdiction: global
+  modules:
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: dtd
+  ectd_version: v3.2.2
+  notes: BROKEN/SELF-SIGNED TLS on estri.ich.org — needs --insecure-hosts estri.ich.org, verify with a
+    browser first
+- id: us-m1-backbone
+  path: jurisdictions/us/module1/v3.2.2/backbone_files_spec_v2_6.pdf
+  title: eCTD Backbone Files Specification for Module 1
+  source_url: https://www.fda.gov/media/159382/download
+  version_date: '2025-03-31'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v3.2.2
+- id: us-ectd-tech-guide
+  path: jurisdictions/us/submission/v3.2.2/tech_conformance_guide_v1_9.pdf
+  title: eCTD Technical Conformance Guide
+  source_url: https://www.fda.gov/media/181847/download
+  version_date: '2024-09-09'
+  jurisdiction: us
+  modules:
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: guidance
+  ectd_version: v3.2.2
+- id: us-regional-dtd
+  path: jurisdictions/us/submission/v3.2.2/us_regional_dtd_v3_3.zip
+  title: US Regional DTD
+  source_url: https://www.accessdata.fda.gov/static/eCTD/us-regional-v3-3.zip
+  version_date: '2018'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v3.2.2
+- id: us-regional-stylesheet
+  path: jurisdictions/us/submission/v3.2.2/us_regional_stylesheet_v2_2.zip
+  title: US Regional Stylesheet
+  source_url: https://www.accessdata.fda.gov/static/eCTD/us-regional.zip
+  version_date: '2013'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v3.2.2
+- id: us-stf-spec
+  path: jurisdictions/us/submission/v3.2.2/stf_spec_v2_6_1.pdf
+  title: eCTD Backbone File Specification for Study Tagging Files
+  source_url: https://www.fda.gov/media/159383/download
+  version_date: '2008-06-03'
+  jurisdiction: us
+  modules:
+  - m5
+  document_type: dtd
+  ectd_version: v3.2.2
+- id: us-pdf-spec
+  path: jurisdictions/us/structure/pdf_specifications_v4_1.pdf
+  title: PDF Specifications
+  source_url: https://www.fda.gov/media/76797/download
+  version_date: 2016-09
+  jurisdiction: us
+  modules:
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: guidance
+- id: us-toc-hierarchy
+  path: jurisdictions/us/module1/v3.2.2/toc_headings_hierarchy_v2_3_5.pdf
+  title: Comprehensive Table of Contents Headings and Hierarchy
+  source_url: https://www.fda.gov/media/181848/download
+  version_date: '2025-02-18'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v3.2.2
+- id: us-ectd-guidance-rev8
+  path: jurisdictions/us/guidelines/ectd_submission_guidance_rev8.pdf
+  title: Providing Regulatory Submissions in Electronic Format — Certain Human Pharmaceutical Product
+    Applications and Related Submissions Using the eCTD Specifications (Guidance for Industry)
+  source_url: https://www.fda.gov/media/135373/download
+  version_date: 2024-09
+  jurisdiction: us
+  modules:
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: guidance
+  notes: Rev. 8; applies to both eCTD versions, not version-specific
+- id: us-ectd4-tech-guide
+  path: jurisdictions/us/submission/v4.0/tech_conformance_guide_v1_5.pdf
+  title: eCTD v4.0 Technical Conformance Guide
+  source_url: https://www.fda.gov/media/179700/download
+  version_date: '2026-07-09'
+  jurisdiction: us
+  modules:
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: guidance
+  ectd_version: v4.0
+- id: ich-q1-draft
+  path: global/ich/q-series/ich-q1-draft.pdf
+  title: Stability Testing of Drug Substances and Products (consolidated draft; not finalized)
+  source_url: https://database.ich.org/sites/default/files/ICH_Q1EWG_Step2_Draft_Guideline_2025_0411.pdf
+  version_date: '2025-04-11'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+  notes: Draft Step 2b — not yet Step 4; keep using Q1A-E until this reaches Step 4
+- id: ich-q1a
+  path: global/ich/q-series/ich-q1a.pdf
+  title: Stability Testing of New Drug Substances and Products
+  source_url: https://database.ich.org/sites/default/files/Q1A(R2)%20Guideline.pdf
+  version_date: '2003-02-06'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q1b
+  path: global/ich/q-series/ich-q1b.pdf
+  title: Photostability Testing of New Drug Substances and Products
+  source_url: https://database.ich.org/sites/default/files/Q1B%20Guideline.pdf
+  version_date: '1996-11-06'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q1c
+  path: global/ich/q-series/ich-q1c.pdf
+  title: Stability Testing for New Dosage Forms
+  source_url: https://database.ich.org/sites/default/files/Q1C%20Guideline.pdf
+  version_date: '1996-11-06'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q1d
+  path: global/ich/q-series/ich-q1d.pdf
+  title: Bracketing and Matrixing Designs for Stability Testing
+  source_url: https://database.ich.org/sites/default/files/Q1D%20Guideline.pdf
+  version_date: '2002-02-07'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q1e
+  path: global/ich/q-series/ich-q1e.pdf
+  title: Evaluation for Stability Data
+  source_url: https://database.ich.org/sites/default/files/Q1E_Guideline.pdf
+  version_date: '2003-02-06'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q2r2
+  path: global/ich/q-series/ich-q2r2.pdf
+  title: Validation of Analytical Procedures
+  source_url: https://database.ich.org/sites/default/files/ICH_Q2(R2)_Guideline_2023_1130.pdf
+  version_date: '2023-11-01'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q14
+  path: global/ich/q-series/ich-q14.pdf
+  title: Analytical Procedure Development
+  source_url: https://database.ich.org/sites/default/files/ICH_Q14_Guideline_2023_1116.pdf
+  version_date: '2023-11-01'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q3a
+  path: global/ich/q-series/ich-q3a.pdf
+  title: Impurities in New Drug Substances
+  source_url: https://database.ich.org/sites/default/files/Q3A(R2)%20Guideline.pdf
+  version_date: '2006-10-25'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q3b
+  path: global/ich/q-series/ich-q3b.pdf
+  title: Impurities in New Drug Products
+  source_url: https://database.ich.org/sites/default/files/Q3B(R2)%20Guideline.pdf
+  version_date: '2006-06-02'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q3c
+  path: global/ich/q-series/ich-q3c.pdf
+  title: 'Impurities: Guideline for Residual Solvents'
+  source_url: https://database.ich.org/sites/default/files/ICH_Q3C(R9)_Guideline_MinorRevision_2024_2024_Approved.pdf
+  version_date: '2024-01-24'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q3d
+  path: global/ich/q-series/ich-q3d.pdf
+  title: Guideline for Elemental Impurities
+  source_url: https://database.ich.org/sites/default/files/Q3D-R2_Guideline_Step4_2022_0308.pdf
+  version_date: '2022-04-26'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-m7
+  path: global/ich/q-series/ich-m7.pdf
+  title: Assessment and Control of DNA Reactive (Mutagenic) Impurities
+  source_url: https://database.ich.org/sites/default/files/ICH_M7(R2)_Guideline_Step4_2023_0216_0.pdf
+  version_date: '2023-04-03'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q6a
+  path: global/ich/q-series/ich-q6a.pdf
+  title: Specifications — Chemical Substances
+  source_url: https://database.ich.org/sites/default/files/Q6A_Guideline.pdf
+  version_date: '1999-10-06'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q6b
+  path: global/ich/q-series/ich-q6b.pdf
+  title: Specifications — Biotechnological/Biological Products
+  source_url: https://database.ich.org/sites/default/files/Q6B%20Guideline.pdf
+  version_date: '1999-03-10'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q8r2
+  path: global/ich/q-series/ich-q8r2.pdf
+  title: Pharmaceutical Development
+  source_url: https://database.ich.org/sites/default/files/Q8(R2)%20Guideline.pdf
+  version_date: 2009-08
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q9r1
+  path: global/ich/q-series/ich-q9r1.pdf
+  title: Quality Risk Management
+  source_url: https://database.ich.org/sites/default/files/ICH_Q9(R1)_Guideline_Step4_2022_1219.pdf
+  version_date: '2023-01-18'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q11
+  path: global/ich/q-series/ich-q11.pdf
+  title: Development and Manufacture of Drug Substances
+  source_url: https://database.ich.org/sites/default/files/Q11%20Guideline.pdf
+  version_date: '2012-05-01'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q12
+  path: global/ich/q-series/ich-q12.pdf
+  title: Technical and Regulatory Considerations for Pharmaceutical Product Lifecycle Management
+  source_url: https://database.ich.org/sites/default/files/Q12_Guideline_Step4_2019_1119.pdf
+  version_date: '2019-11-20'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q13
+  path: global/ich/q-series/ich-q13.pdf
+  title: Continuous Manufacturing of Drug Substances and Drug Products
+  source_url: https://database.ich.org/sites/default/files/ICH_Q13_Step4_Guideline_2022_1116.pdf
+  version_date: '2022-11-16'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q5a
+  path: global/ich/q-series/ich-q5a.pdf
+  title: Viral Safety Evaluation of Biotechnology Products
+  source_url: https://database.ich.org/sites/default/files/ICH_Q5A(R2)_Guideline_2023_1101.pdf
+  version_date: '2023-11-01'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q5b
+  path: global/ich/q-series/ich-q5b.pdf
+  title: Analysis of the Expression Construct in Cells Used for Production
+  source_url: https://database.ich.org/sites/default/files/Q5B%20Guideline.pdf
+  version_date: '1995-11-30'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q5c
+  path: global/ich/q-series/ich-q5c.pdf
+  title: Stability Testing of Biotechnological/Biological Products
+  source_url: https://database.ich.org/sites/default/files/Q5C_Guideline.pdf
+  version_date: '1995-11-30'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+  notes: Will merge into ich-q1-draft once that reaches Step 4
+- id: ich-q5d
+  path: global/ich/q-series/ich-q5d.pdf
+  title: Derivation and Characterisation of Cell Substrates
+  source_url: https://database.ich.org/sites/default/files/Q5D%20Guideline.pdf
+  version_date: '1997-07-16'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-q5e
+  path: global/ich/q-series/ich-q5e.pdf
+  title: Comparability of Biotechnological/Biological Products Subject to Manufacturing Changes
+  source_url: https://database.ich.org/sites/default/files/Q5E_Guideline.pdf
+  version_date: '2004-11-18'
+  jurisdiction: global
+  modules:
+  - m3
+  document_type: guidance
+- id: ich-m3-r2
+  path: global/ich/s-series/ich-m3-r2.pdf
+  title: Nonclinical Safety Studies for the Conduct of Human Clinical Trials/Marketing Authorization
+  source_url: https://database.ich.org/sites/default/files/M3_R2__Guideline.pdf
+  version_date: '2009-06-11'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s1a
+  path: global/ich/s-series/ich-s1a.pdf
+  title: Guideline on the Need for Carcinogenicity Studies of Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S1A_Guideline.pdf
+  version_date: '1995-11-29'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s1b-r1
+  path: global/ich/s-series/ich-s1b-r1.pdf
+  title: Testing for Carcinogenicity of Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S1B-R1_FinalGuideline_2022_0719.pdf
+  version_date: '2022-08-04'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s1c-r2
+  path: global/ich/s-series/ich-s1c-r2.pdf
+  title: Dose Selection for Carcinogenicity Studies of Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S1C(R2)%20Guideline.pdf
+  version_date: '2008-03-11'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s2-r1
+  path: global/ich/s-series/ich-s2-r1.pdf
+  title: Genotoxicity Testing and Data Interpretation for Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S2(R1)%20Guideline.pdf
+  version_date: '2011-11-09'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s3a
+  path: global/ich/s-series/ich-s3a.pdf
+  title: 'Toxicokinetics: The Assessment of Systemic Exposure in Toxicity Studies'
+  source_url: https://database.ich.org/sites/default/files/S3A_Guideline.pdf
+  version_date: '1994-10-27'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s3b
+  path: global/ich/s-series/ich-s3b.pdf
+  title: 'Pharmacokinetics: Guidance for Repeated Dose Tissue Distribution Studies'
+  source_url: https://database.ich.org/sites/default/files/S3B_Guideline.pdf
+  version_date: '1994-10-27'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s4
+  path: global/ich/s-series/ich-s4.pdf
+  title: Duration of Chronic Toxicity Testing in Animals
+  source_url: https://database.ich.org/sites/default/files/S4_Guideline.pdf
+  version_date: '1998-09-02'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s5-r3
+  path: global/ich/s-series/ich-s5-r3.pdf
+  title: Detection of Reproductive and Developmental Toxicity for Human Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S5-R3_Step4_Guideline_2020_0218.pdf
+  version_date: '2020-02-18'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s6-r1
+  path: global/ich/s-series/ich-s6-r1.pdf
+  title: Preclinical Safety Evaluation of Biotechnology-Derived Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S6_R1_Guideline_0.pdf
+  version_date: 2011-06
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s7a
+  path: global/ich/s-series/ich-s7a.pdf
+  title: Safety Pharmacology Studies for Human Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S7A_Guideline.pdf
+  version_date: '2000-11-08'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s7b
+  path: global/ich/s-series/ich-s7b.pdf
+  title: Nonclinical Evaluation of Delayed Ventricular Repolarization (QT Interval Prolongation)
+  source_url: https://database.ich.org/sites/default/files/S7B_Guideline.pdf
+  version_date: '2005-05-12'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s8
+  path: global/ich/s-series/ich-s8.pdf
+  title: Immunotoxicity Studies for Human Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S8_Guideline_0.pdf
+  version_date: '2005-09-15'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s9
+  path: global/ich/s-series/ich-s9.pdf
+  title: Nonclinical Evaluation for Anticancer Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S9_Guideline.pdf
+  version_date: '2009-10-29'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s10
+  path: global/ich/s-series/ich-s10.pdf
+  title: Photosafety Evaluation of Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S10_Guideline.pdf
+  version_date: '2013-11-13'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-s11
+  path: global/ich/s-series/ich-s11.pdf
+  title: Nonclinical Safety Testing in Support of Development of Paediatric Pharmaceuticals
+  source_url: https://database.ich.org/sites/default/files/S11_Step4_FinalGuideline_2020_0310.pdf
+  version_date: '2020-04-14'
+  jurisdiction: global
+  modules:
+  - m4
+  document_type: guidance
+- id: ich-e2a
+  path: global/ich/e-series/ich-e2a.pdf
+  title: 'Clinical Safety Data Management: Definitions and Standards for Expedited Reporting'
+  source_url: https://database.ich.org/sites/default/files/E2A_Guideline.pdf
+  version_date: '1994-10-27'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-e2f
+  path: global/ich/e-series/ich-e2f.pdf
+  title: Development Safety Update Report
+  source_url: https://database.ich.org/sites/default/files/E2F_Guideline.pdf
+  version_date: '2010-08-17'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-e3
+  path: global/ich/e-series/ich-e3.pdf
+  title: Structure and Content of Clinical Study Reports
+  source_url: https://database.ich.org/sites/default/files/E3_Guideline.pdf
+  version_date: '1995-11-30'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-e4
+  path: global/ich/e-series/ich-e4.pdf
+  title: Dose-Response Information to Support Drug Registration
+  source_url: https://database.ich.org/sites/default/files/E4_Guideline.pdf
+  version_date: '1994-03-10'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-e5-r1
+  path: global/ich/e-series/ich-e5-r1.pdf
+  title: Ethnic Factors in the Acceptability of Foreign Clinical Data
+  source_url: https://database.ich.org/sites/default/files/E5_R1__Guideline.pdf
+  version_date: '1998-02-05'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-e6-r3
+  path: global/ich/e-series/ich-e6-r3.pdf
+  title: 'Guideline for Good Clinical Practice (consolidated: Principles + Annex 1 + Annex 2)'
+  source_url: https://database.ich.org/sites/default/files/ICH%20E6(R3)_Step4_FinalConsolidatedGuideline_2026_0616_.pdf
+  version_date: '2026-06-16'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-e7
+  path: global/ich/e-series/ich-e7.pdf
+  title: 'Studies in Support of Special Populations: Geriatrics'
+  source_url: https://database.ich.org/sites/default/files/E7_Guideline.pdf
+  version_date: '1993-06-24'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-e9
+  path: global/ich/e-series/ich-e9.pdf
+  title: Statistical Principles for Clinical Trials
+  source_url: https://database.ich.org/sites/default/files/E9_Guideline.pdf
+  version_date: '1998-02-05'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-e9-r1
+  path: global/ich/e-series/ich-e9-r1.pdf
+  title: Addendum on Estimands and Sensitivity Analysis in Clinical Trials
+  source_url: https://database.ich.org/sites/default/files/E9-R1_Step4_Guideline_2019_1203.pdf
+  version_date: '2019-11-20'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-e11-r1
+  path: global/ich/e-series/ich-e11-r1.pdf
+  title: 'Addendum to ICH E11: Clinical Investigation of Medicinal Products in the Paediatric Population'
+  source_url: https://database.ich.org/sites/default/files/E11_R1_Addendum.pdf
+  version_date: '2017-08-18'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-e14
+  path: global/ich/e-series/ich-e14.pdf
+  title: Clinical Evaluation of QT/QTc Interval Prolongation (Non-Antiarrhythmic Drugs)
+  source_url: https://database.ich.org/sites/default/files/E14_Guideline.pdf
+  version_date: '2005-05-12'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-m9
+  path: global/ich/e-series/ich-m9.pdf
+  title: Biopharmaceutics Classification System-Based Biowaivers
+  source_url: https://database.ich.org/sites/default/files/M9_Guideline_Step4_2019_1116.pdf
+  version_date: '2019-11-20'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-m13a
+  path: global/ich/e-series/ich-m13a.pdf
+  title: Bioequivalence for Immediate-Release Solid Oral Dosage Forms
+  source_url: https://database.ich.org/sites/default/files/ICH_M13A_Step4_Final_Guideline_2024_0723.pdf
+  version_date: '2024-07-23'
+  jurisdiction: global
+  modules:
+  - m5
+  document_type: guidance
+- id: ich-m8-support-documentation
+  path: global/ectd/v4.0/m8_support_documentation_v1_6_0.pdf
+  title: 'Support Documentation for M8: eCTD v4.0 Implementation Package'
+  source_url: https://admin.ich.org/sites/default/files/inline-files/eCTDv4_0_SupportDocumentation_v1_6_0.pdf
+  version_date: 1.6.0
+  jurisdiction: global
+  modules:
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: dtd
+  ectd_version: v4.0
+- id: ich-m8-spec-submission-formats
+  path: global/ectd/v4.0/spec_submission_formats_v1_2.pdf
+  title: Specification for Submission Formats for eCTD
+  source_url: https://admin.ich.org/sites/default/files/inline-files/Specification_for_Submission_Formats_for_eCTD_v1_2.pdf
+  version_date: '1.2'
+  jurisdiction: global
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: ich-m8-orientation-material
+  path: global/ectd/v4.0/orientation_material_v1_5.pdf
+  title: 'Orientation Material for M8: eCTD v4.0 Implementation Package'
+  source_url: https://admin.ich.org/sites/default/files/inline-files/eCTDv4_0_Orientation_Material_v1_5.pdf
+  version_date: '1.5'
+  jurisdiction: global
+  modules:
+  - m1
+  document_type: guidance
+  ectd_version: v4.0
+  notes: Content unreadable via text extraction this session; presence-only confirmed
+- id: ich-ectd-v40-ig-package
+  path: global/ectd/v4.0/implementation_guide_v1_6.zip
+  title: ICH eCTD v4.0 Implementation Guide Package (FDA-hosted mirror)
+  source_url: https://www.fda.gov/media/193873/download
+  version_date: '2024-05-22'
+  jurisdiction: global
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: ich-ectd-v40-cv-package
+  path: global/ectd/v4.0/controlled_vocabulary_package_v1_0_2.zip
+  title: ICH eCTD v4.0 Controlled Vocabulary Package (FDA-hosted mirror)
+  source_url: https://www.fda.gov/media/193872/download
+  version_date: 1.0.2
+  jurisdiction: global
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+  notes: FDA page labels this 'v1.0'; the archive itself is internally named v1.0.2. A newer IG v1.7/CV
+    v1.0.3 was reportedly ICH-Assembly-endorsed June 2026 but not fetchable (JS-rendered ich.org pages)
+    -- manual browser check recommended before treating this as current
+- id: ich-m8-toc-headings-hierarchy
+  path: jurisdictions/us/module1/v4.0/toc_headings_hierarchy_v2_2.pdf
+  title: eCTD v4.0 Comprehensive Table of Contents Headings and Hierarchy
+  source_url: https://www.fda.gov/media/179699/download
+  version_date: '2025-02-18'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: fda-regional-m1-ig
+  path: jurisdictions/us/module1/v4.0/regional_m1_ig_v1_9.pdf
+  title: FDA Regional eCTD v4.0 Module 1 Implementation Guide
+  source_url: https://www.fda.gov/media/194432/download
+  version_date: '1.9'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: fda-regional-cv
+  path: jurisdictions/us/submission/v4.0/regional_cv_v1_2.zip
+  title: FDA Regional Controlled Vocabulary (CV) eCTD v4.0 Package
+  source_url: https://www.fda.gov/media/194431/download
+  version_date: '1.2'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: fda-regional-forward-compat-xml
+  path: jurisdictions/us/submission/v4.0/forward_compat_xml_samples_v1_0.zip
+  title: FDA Regional Forward Compatibility XML Samples
+  source_url: https://www.fda.gov/media/193528/download
+  version_date: '1.0'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: fda-regional-m1-xml-samples
+  path: jurisdictions/us/module1/v4.0/m1_xml_samples_v3_0.zip
+  title: FDA Regional Module 1 XML Samples
+  source_url: https://www.fda.gov/media/179729/download
+  version_date: '3.0'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: fda-ectd-v40-validation-criteria
+  path: jurisdictions/us/submission/v4.0/validation_criteria_v1_6.pdf
+  title: Specifications for eCTD v4.0 Validation Criteria
+  source_url: https://www.fda.gov/media/194434/download
+  version_date: '2026-08-28'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: validation_criteria
+  ectd_version: v4.0
+- id: fda-file-format-specs
+  path: jurisdictions/us/submission/v4.0/file_format_specs_v9_3.pdf
+  title: Specifications for File Format Types Using eCTD Specifications
+  source_url: https://www.fda.gov/media/85816/download
+  version_date: '2025-08-20'
+  jurisdiction: us
+  modules:
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: guidance
+  ectd_version: v4.0
+- id: fda-transmission-specs
+  path: jurisdictions/us/submission/v4.0/transmission_specs_v2_0.pdf
+  title: Transmission Specifications
+  source_url: https://www.fda.gov/media/76812/download
+  version_date: '2026-07-09'
+  jurisdiction: us
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: ema-eu-ig-draft
+  path: jurisdictions/eu/module1/v4.0/eu_m1_ig_draft_v1_2.docx
+  title: EU eCTD v4.0 Implementation Guide (draft)
+  source_url: https://esubmission.ema.europa.eu/eCTD%20NMV/docs/eCTD%20v4.0%20EU%20IG%202024%20draft_1.2.docx
+  version_date: 2024-10
+  jurisdiction: eu
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+  notes: Still draft; a 'v1.3' was referenced as upcoming but not found published
+- id: ema-eu-accepted-file-formats
+  path: jurisdictions/eu/submission/v4.0/accepted_file_formats_v1.docx
+  title: EU eCTD v4.0 — Accepted File Formats
+  source_url: https://esubmission.ema.europa.eu/eCTD%20NMV/docs/EU%20eCTD%20v4.0%20-%20Accepted%20file%20formats%20v1.docx
+  version_date: 2024-10
+  jurisdiction: eu
+  modules:
+  - m1
+  document_type: guidance
+  ectd_version: v4.0
+- id: ema-eu-validation-criteria
+  path: jurisdictions/eu/submission/v4.0/validation_criteria_v1_1.xlsx
+  title: EU eCTD v4.0 — Validation Criteria
+  source_url: https://esubmission.ema.europa.eu/eumodule1/docs/Validation%20Criteria%20EU%20eCTD%204.0%20v1.1.xlsx
+  version_date: 2026-03
+  jurisdiction: eu
+  modules:
+  - m1
+  document_type: validation_criteria
+  ectd_version: v4.0
+  notes: Applicable from 2026-07-15
+- id: ema-eu-cv-excel
+  path: jurisdictions/eu/submission/v4.0/controlled_vocabularies_v3.xlsx
+  title: EU eCTD v4.0 — Controlled Vocabularies (Excel)
+  source_url: https://esubmission.ema.europa.eu/eCTD%20NMV/docs/EU%20eCTD%20v4.0%20-%20Controlled%20Vocabularies%20v3.xlsx
+  version_date: 2025-11
+  jurisdiction: eu
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: ema-eu-cv-genericode
+  path: jurisdictions/eu/submission/v4.0/controlled_vocabularies_v3_genericode.zip
+  title: EU eCTD v4.0 — Controlled Vocabularies (Genericode)
+  source_url: https://esubmission.ema.europa.eu/eCTD%20NMV/docs/EU%20eCTD%20v4.0%20-%20Controlled%20Vocabularies%20v3%20-%20genericode.zip
+  version_date: 2025-11
+  jurisdiction: eu
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: ema-eu-practical-guidance
+  path: jurisdictions/eu/submission/v4.0/practical_guidance_v1.pdf
+  title: EU eCTD v4.0 Practical Guidance
+  source_url: https://esubmission.ema.europa.eu/eCTD%20NMV/docs/EU%20eCTD%20v4.0%20Practical%20Guidance%20v1.pdf
+  version_date: '2025-12-15'
+  jurisdiction: eu
+  modules:
+  - m1
+  document_type: guidance
+  ectd_version: v4.0
+- id: jp-ectd-v4-module1-ig
+  path: jurisdictions/japan/module1/v4.0/module1_ig_v1_6_0.pdf
+  title: ICH eCTD v4.0 Implementation Guide in Japan (Appendix 1, English provisional translation)
+  source_url: https://www.pmda.go.jp/files/000274433.pdf
+  version_date: '2025-03-26'
+  jurisdiction: japan
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: jp-ectd-v4-submission-format-spec
+  path: jurisdictions/japan/submission/v4.0/submission_format_spec_v1_3_1.pdf
+  title: Specification for Submission Formats for eCTD in Japan (Appendix 2, English provisional translation)
+  source_url: https://www.pmda.go.jp/files/000274434.pdf
+  version_date: '2025-03-10'
+  jurisdiction: japan
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+- id: jp-ectd-v4-check-items-list
+  path: jurisdictions/japan/submission/v4.0/check_items_list_v1_6_0_0.pdf
+  title: eCTD v4.0 JP Check Items List (validation criteria, English provisional translation)
+  source_url: https://www.pmda.go.jp/files/000275744.pdf
+  version_date: '2025-03-26'
+  jurisdiction: japan
+  modules:
+  - m1
+  document_type: validation_criteria
+  ectd_version: v4.0
+- id: eu-notice-to-applicants-vol2b
+  path: jurisdictions/eu/structure/notice_to_applicants_vol2b.pdf
+  title: Notice to Applicants, Volume 2B — Presentation and Format of the Dossier (CTD)
+  source_url: https://health.ec.europa.eu/document/download/672171e7-8f79-41a9-a523-c82d9c07a0eb_en
+  version_date: 2008-05
+  jurisdiction: eu
+  modules:
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: guidance
+  notes: Content dates 2003-2008, largely superseded by the eCTD Module 1 specs for binding technical
+    rules
+- id: eu-module1-ectd-spec-v3.1.1
+  path: jurisdictions/eu/module1/v3.2.2/m1_implementation_guide_v3_1_1.pdf
+  title: EU Module 1 eCTD Implementation Guide (for eCTD 3.2.2 backbone)
+  source_url: https://esubmission.ema.europa.eu/eumodule1/eCTD%203.2.2%20-%20EU%20M1%20Implementation%20Guide%20v3.1.1.pdf
+  version_date: 2025-06
+  jurisdiction: eu
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v3.2.2
+  notes: Mandatory from 2025-12-01
+- id: eu-qrd-product-information-template
+  path: jurisdictions/eu/labeling/qrd_product_information_template_v10_4.pdf
+  title: QRD Product-Information Annotated Template (English) — SmPC/Labelling/PIL
+  source_url: https://www.ema.europa.eu/en/documents/template-form/qrd-product-information-annotated-template-english-version-104_en.pdf
+  version_date: '2024-02-29'
+  jurisdiction: eu
+  modules:
+  - m1
+  document_type: guidance
+  notes: A draft v11 was in consultation through Aug 2025 -- check if finalized
+- id: eu-ectd-validation-criteria-v8.2
+  path: jurisdictions/eu/submission/v3.2.2/validation_criteria_v8_2.xlsx
+  title: eCTD EU Validation Criteria (companion to M1 IG v3.1.1)
+  source_url: https://esubmission.ema.europa.eu/eumodule1/eCTD%203.2.2%20-%20EU%20M1%20Validation%20Criteria%20v8.2.xlsx
+  version_date: 2025-06
+  jurisdiction: eu
+  modules:
+  - m1
+  document_type: validation_criteria
+  ectd_version: v3.2.2
+  notes: Mandatory from 2025-12-01
+- id: jp-ctd-format-notice-2011
+  path: jurisdictions/japan/guidelines/ctd_format_notice_2011.pdf
+  title: Format for Preparing the CTD for Submission of New Drug Applications to Reduce Total Review Time
+  source_url: https://www.pmda.go.jp/files/000153518.pdf
+  version_date: '2011-01-17'
+  jurisdiction: japan
+  modules:
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: guidance
+- id: jp-review-time-points-2010
+  path: jurisdictions/japan/guidelines/review_time_points_2010.pdf
+  title: Points to Consider for Reducing Total Review Time for New Drug Applications
+  source_url: https://www.pmda.go.jp/files/000153397.pdf
+  version_date: '2010-06-09'
+  jurisdiction: japan
+  modules:
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  document_type: guidance
+- id: jp-application-attachments-2024
+  path: jurisdictions/japan/guidelines/application_attachments_2024.pdf
+  title: Submitting Documents to be Attached in the Application for Approval of New Ethical Drugs
+  source_url: https://www.pmda.go.jp/files/000270639.pdf
+  version_date: '2024-09-06'
+  jurisdiction: japan
+  modules:
+  - m1
+  document_type: guidance
+- id: ich-ectd-v4-ig-base
+  path: global/ich/m8/ectd_v4_implementation_guide_v1_5.pdf
+  title: ICH eCTD v4.0 Implementation Guide (global, PMDA-mirrored)
+  source_url: https://www.pmda.go.jp/files/000246003.pdf
+  version_date: '2022-05-24'
+  jurisdiction: global
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+  notes: Global ICH document, mirrored on PMDA's site
+- id: hc-module1-backbone
+  path: jurisdictions/canada/module1/v3.2.2/module1_backbone_schema_2_2.html
+  title: 'Guidance Document: Creation of the Canadian Module 1 Backbone'
+  source_url: https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/ectd/notice-creation-canadian-module-1-backbone-2012-health-canada-consultation-document.html
+  version_date: '2012-09-30'
+  jurisdiction: canada
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v3.2.2
+- id: hc-module1-doc-placement
+  path: jurisdictions/canada/module1/v3.2.2/module1_doc_placement.html
+  title: Organization and Document Placement for Canadian Module 1
+  source_url: https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/organization-document-placement-canadian-module-1.html
+  version_date: '2024-04-02'
+  jurisdiction: canada
+  modules:
+  - m1
+  document_type: guidance
+  ectd_version: v3.2.2
+- id: hc-module1-v4-draft
+  path: jurisdictions/canada/module1/v4.0/module1_v4_draft_2019.pdf
+  title: 'Draft Guidance: Canadian Module 1 Technical Implementation Guide for eCTD v4.0 Format'
+  source_url: https://www.canada.ca/content/dam/hc-sc/documents/services/drugs-health-products/public-involvement-consultations/drug-products/draft-guidance-canadian-module-1-technical-implementation-guide-ectd-v4-format/document/draft-guidance-canadian-module-1-technical-implementation-guide-ectd-v4-format.pdf
+  version_date: '2019'
+  jurisdiction: canada
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v4.0
+  notes: NEVER FINALIZED -- consultation closed 2019, no final version since. Canada has not adopted eCTD
+    4.0.
+- id: hc-ectd-validation-rules
+  path: jurisdictions/canada/submission/v3.2.2/validation_rules_v5_3.html
+  title: Validation Rules for Regulatory Transactions in eCTD Format
+  source_url: https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/ectd/notice-validation-rules-regulatory-transactions-submitted-health-canada-electronic-common-technical-document-format-2016-12-1.html
+  version_date: '2025-01-10'
+  jurisdiction: canada
+  modules:
+  - m1
+  document_type: validation_criteria
+  ectd_version: v3.2.2
+  notes: Effective 2025-05-31; no v4.0 equivalent exists
+- id: hc-product-monograph-guidance
+  path: jurisdictions/canada/labeling/product_monograph_guidance_v7.pdf
+  title: 'Guidance Document: Product Monograph'
+  source_url: https://www.canada.ca/content/dam/hc-sc/migration/hc-sc/dhp-mps/alt_formats/pdf/prodpharma/applic-demande/guide-ld/monograph/pm-guid-ld-mp-eng.pdf
+  version_date: '2024-08-30'
+  jurisdiction: canada
+  modules:
+  - m1
+  document_type: guidance
+- id: hc-labelling-pharma-drugs
+  path: jurisdictions/canada/labeling/labelling_pharma_drugs_2015.html
+  title: 'Guidance Document: Labelling of Pharmaceutical Drugs for Human Use'
+  source_url: https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/labelling-pharmaceutical-drugs-human-use-2014-guidance-document.html
+  version_date: '2015-06-13'
+  jurisdiction: canada
+  modules:
+  - m1
+  document_type: guidance
+  notes: A same-titled page at a different slug (labelling-pharmaceutical-drugs-humans.html) was also
+    found -- confirm it's not a newer duplicate before relying on this one
+- id: mhra-ectd-guidance-irp
+  path: jurisdictions/uk/module1/v3.2.2/ectd_guidance_irp.html
+  title: eCTD Guidance for Marketing Authorisation and Post-Authorisation Applications
+  source_url: https://www.gov.uk/government/publications/international-recognition-procedure/ectd-guidance-for-irp-mas-and-lifecycle
+  version_date: '2026-09-03'
+  jurisdiction: uk
+  modules:
+  - m1
+  document_type: guidance
+  ectd_version: v3.2.2
+  notes: MHRA has no standalone Module 1 spec of its own; defers to the EU spec (see uk-eu-module1-ectd-spec-v3.0.2)
+- id: uk-eu-module1-ectd-spec-v3.0.2
+  path: jurisdictions/uk/module1/v3.2.2/eu_m1_ectd_spec_v3_0_2.pdf
+  title: EU Module 1 eCTD Specification (what MHRA points UK applicants to)
+  source_url: https://esubmission.ema.europa.eu/eumodule1/docs/EU%20M1%20eCTD%20Spec%20v3.0.2-HHMG-20170308.pdf
+  version_date: 2017-04
+  jurisdiction: uk
+  modules:
+  - m1
+  document_type: dtd
+  ectd_version: v3.2.2
+  notes: EU/EMA-hosted, not MHRA-authored -- UK is post-Brexit independent of EU/EMA; mirrored here since
+    MHRA has no equivalent of its own
+- id: mhra-ectd-submissions-update
+  path: jurisdictions/uk/submission/v3.2.2/ectd_submissions_update_2025.html
+  title: eCTD Submissions Update (Lorenz DocuBridge move, stricter ICH adherence)
+  source_url: https://www.gov.uk/guidance/electronic-common-technical-document-ectd-submissions-update
+  version_date: '2025-06-17'
+  jurisdiction: uk
+  modules:
+  - m1
+  document_type: guidance
+  ectd_version: v3.2.2
+  notes: Narrative policy notice, not a numbered validation-criteria spec -- none found on gov.uk
+- id: mhra-labelling-packaging-best-practice
+  path: jurisdictions/uk/labeling/labelling_packaging_best_practice.pdf
+  title: Best Practice Guidance on the Labelling and Packaging of Medicines
+  source_url: https://assets.publishing.service.gov.uk/media/6a4770118effd97622f53be5/Best_practice_guidance_labelling_MHRA_Final_July_2026.pdf
+  version_date: '2026-07-03'
+  jurisdiction: uk
+  modules:
+  - m1
+  document_type: guidance
+- id: mhra-pil-best-practice
+  path: jurisdictions/uk/labeling/pil_best_practice.pdf
+  title: Best Practice Guidance on Patient Information Leaflets
+  source_url: https://assets.publishing.service.gov.uk/media/6a4770c01c8bd7ce25a5ea3b/Best_practice_guidance_on_patient_information_leaflets.pdf
+  version_date: '2026-07-01'
+  jurisdiction: uk
+  modules:
+  - m1
+  document_type: guidance
+- id: mhra-smpc-template
+  path: jurisdictions/uk/labeling/smpc_template.doc
+  title: SmPC Template
+  source_url: https://assets.publishing.service.gov.uk/media/5a7e28e240f0b62305b812e7/SPC_template.doc
+  version_date: null
+  jurisdiction: uk
+  modules:
+  - m1
+  document_type: dtd
+  notes: No version/date found on the asset itself -- confirm it's still current before relying on it
+- id: mhra-apply-licence-hub
+  path: jurisdictions/uk/guidelines/apply_licence_hub.html
+  title: Apply for a Licence to Market a Medicine in the UK
+  source_url: https://www.gov.uk/guidance/apply-for-a-licence-to-market-a-medicine-in-the-uk
+  version_date: '2026-04-01'
+  jurisdiction: uk
+  modules:
+  - m1
+  document_type: guidance

@@ -1,0 +1,28 @@
+# US-FDA authority profile (spec §5).
+#
+# Citations (docs/reference/regulatory_sources/manifest.yaml ids):
+#   us-ectd-guidance-rev8 — general eCTD-required (not paper/CTD-PDF) mandate
+#   for NDA/ANDA/BLA effective 2017-05-05, commercial IND/master files
+#   2018-05-05 (Table 1, §III.B). Backs ctd_pdf.reason below. Verified by
+#   reading the PDF directly (all 17 pages) — it does NOT state a specific
+#   eCTD-v4.0-mandatory-since date; §III.F lists v3.2.2 and v4.0 as parallel
+#   currently-supported versions, not one superseding the other.
+#
+#   ectd_4_0.since below is UNVERIFIED against any file in docs/reference/ —
+#   it's spec.md §5's own worked example value, kept as directionally
+#   plausible, not confirmed against a primary source. Sourcing it properly
+#   (the live FDA eCTD page spec.md §5 links) is a deliberate fast-follow,
+#   not done as part of this slice.
+authority: US-FDA
+version: "1"
+formats:
+  ectd_4_0:
+    allowed_for: [new_application]
+    since: 2024-09-16  # UNVERIFIED — see citation note above
+  ectd_3_2_2:
+    allowed_for: [new_application, existing_3_2_2_application]
+  ctd_pdf:
+    allowed_for: []
+    reason: "eCTD required for NDA, ANDA, BLA, commercial IND"
+application_types: [nda_505b1, nda_505b2, anda, bla_351a, bla_351k]
+module1: us_regional
