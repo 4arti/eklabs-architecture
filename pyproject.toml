@@ -13,6 +13,32 @@ dependencies = [
     # Runtime dependency, not just a scripts/ tool: products/ectd/profiles
     # loads authority profile YAML at request time (format_policy.py).
     "pyyaml>=6.0.2",
+    # Loads .env in every real process entry point (conftest.py,
+    # migrations/env.py, apps/api/worker.py) — .gitignore already carved
+    # out .env/.env.* (keeping !.env.example), this just actually wires it up.
+    "python-dotenv>=1.0.1",
+    # Ingestion pipeline (platform/ingestion/) --------------------------
+    # docling/docling-core and langfuse are pinned EXACT, not >=, deviating
+    # from this project's usual convention: ingestion/parsing.py,
+    # ingestion/chunking.py and llm/tracing.py were written against these
+    # exact versions' actual source (field names/signatures moved enough
+    # between versions during development to break code written against
+    # the docs alone) — bumping either needs a re-check of those files
+    # against the new version's source, not just a version-string edit.
+    "docling==2.133.0",
+    "docling-core==2.99.0",
+    "pandas>=2.2.0",  # Excel/CSV straight into table_extract rows
+    "openpyxl>=3.1.0",
+    "boto3>=1.34.0",  # Supabase Storage's S3-compatible endpoint
+    "arq>=0.26.0",
+    "redis>=5.0.0",
+    # Embeddings (platform/knowledge/) -----------------------------------
+    "sentence-transformers>=3.0.0",  # BGE-large-en-v1.5, self-hosted
+    # Claude gateway (platform/llm/) -------------------------------------
+    "anthropic>=0.40.0",
+    "langfuse==4.17.0",  # v3+ restructured the SDK (no more langfuse.decorators)
+    # Citation checks (platform/evidence/) -------------------------------
+    "rapidfuzz>=3.9.0",  # near-exact quote matching
 ]
 
 [project.optional-dependencies]
@@ -25,8 +51,6 @@ dev = [
 ]
 sourcing = [
     "httpx>=0.27.0",
-    "pandas>=2.2.0",
-    "openpyxl>=3.1.0",
     "beautifulsoup4>=4.12.0",
 ]
 
@@ -51,6 +75,21 @@ line-length = 100
 [tool.mypy]
 python_version = "3.12"
 strict = true
+
+[[tool.mypy.overrides]]
+# boto3/botocore ship no inline type stubs (types-boto3 is a huge,
+# separately-maintained stub package not worth the dependency for the two
+# calls storage.py actually makes).
+module = ["boto3.*", "botocore.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+# docling_core's own internals import DoclingDocument/TableItem/DocChunk
+# this same way (confirmed by reading hybrid_chunker.py's source) — these
+# are the package's real public import paths, just not re-declared via
+# __all__, which --strict's implicit-reexport check doesn't know.
+module = ["docling_core.*"]
+implicit_reexport = true
 
 [build-system]
 requires = ["setuptools>=69"]

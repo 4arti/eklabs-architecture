@@ -6,6 +6,7 @@ from eklabs_platform.core.db.models.audit_log import AuditLog
 from eklabs_platform.core.db.models.chunk import Chunk
 from eklabs_platform.core.db.models.document import Document
 from eklabs_platform.core.db.models.page import Page
+from eklabs_platform.core.db.models.table_extract import TableExtract
 from eklabs_platform.core.db.models.tenant import Tenant
 
-__all__ = ["AppUser", "AuditLog", "Chunk", "Document", "Page", "Tenant"]
+__all__ = ["AppUser", "AuditLog", "Chunk", "Document", "Page", "TableExtract", "Tenant"]

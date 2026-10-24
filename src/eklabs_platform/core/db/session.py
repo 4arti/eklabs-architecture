@@ -23,7 +23,21 @@ def _database_url() -> str:
     return url
 
 
-engine: AsyncEngine = create_async_engine(_database_url(), pool_pre_ping=True)
+# statement_cache_size=0 disables asyncpg's client-side prepared-statement
+# cache — required against Supabase's transaction-mode pooler (PgBouncer).
+# PgBouncer in transaction mode can route a query to a different physical
+# backend connection than the one that originally prepared a statement, and
+# that backend may coincidentally already have a statement under the same
+# auto-generated name (__asyncpg_stmt_N__) prepared by some other, unrelated
+# session that previously shared it — asyncpg has no way to know, and
+# raises DuplicatePreparedStatementError. This is a documented asyncpg/
+# PgBouncer incompatibility, not something APP_DATABASE_URL's own queries
+# did wrong; confirmed by hitting it for real once enough distinct
+# tenant_scoped_session() calls had run against the pooler for backend
+# rotation to actually occur.
+engine: AsyncEngine = create_async_engine(
+    _database_url(), pool_pre_ping=True, connect_args={"statement_cache_size": 0}
+)
 _session_factory = async_sessionmaker(engine, expire_on_commit=False)
 
 

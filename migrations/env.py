@@ -1,8 +1,15 @@
 import os
 from logging.config import fileConfig
+from pathlib import Path
 
 from alembic import context
+from dotenv import load_dotenv
 from sqlalchemy import engine_from_config, pool
+
+# alembic is its own process entry point (run directly, not through
+# pytest), so it needs its own load_dotenv() call — conftest.py's doesn't
+# reach it. Before anything below reads ALEMBIC_DATABASE_URL.
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 # Registers every model on Base.metadata so autogenerate sees the whole
 # schema — platform tables AND product tables — regardless of which module
